@@ -49,3 +49,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Angular
 gem 'angularjs-rails', '~> 1.5', '>= 1.5.8'
 gem 'angular-rails-templates'
+gem 'rack-cors', :require => "rack/cors"

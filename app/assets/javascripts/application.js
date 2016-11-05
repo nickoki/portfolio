@@ -32,7 +32,7 @@ angular
 
 
 function ProjectFactoryFunction($resource) {
-  return $resource("localhost:3000/projects")
+  return $resource('/projects/:id.json')
 }
 
 
