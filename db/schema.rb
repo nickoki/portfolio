@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105190712) do
+ActiveRecord::Schema.define(version: 20161105191041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20161105190712) do
     t.string   "alt_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "project_id"
+    t.index ["project_id"], name: "index_images_on_project_id", using: :btree
   end
 
   create_table "links", force: :cascade do |t|
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 20161105190712) do
     t.string   "call_to_action"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "project_id"
+    t.index ["project_id"], name: "index_links_on_project_id", using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
@@ -37,12 +41,8 @@ ActiveRecord::Schema.define(version: 20161105190712) do
     t.string   "cover_image_url"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "link_id"
-    t.integer  "image_id"
-    t.index ["image_id"], name: "index_projects_on_image_id", using: :btree
-    t.index ["link_id"], name: "index_projects_on_link_id", using: :btree
   end
 
-  add_foreign_key "projects", "images"
-  add_foreign_key "projects", "links"
+  add_foreign_key "images", "projects"
+  add_foreign_key "links", "projects"
 end
