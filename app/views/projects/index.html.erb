@@ -20,8 +20,12 @@
 
 <div data-ng-controller="ProjectIndexController as vm">
   <div data-ng-repeat="project in vm.projects">
-      {{project}}
+      <h2>{{project.title}}</h2>
+      <h3>{{project.subtitle}}</h3>
+      <small>{{project.category}}</small>
+      <p>{{project.description}}</p>
+      <div data-ng-repeat="link in project.links">
+        <a href="{{link.url}}">{{link.call_to_action}}</a>
+      </div>
   </div>
 </div>
-
-<%= console %>
