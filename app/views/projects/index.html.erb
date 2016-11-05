@@ -17,3 +17,9 @@
     <% end %>
   </tbody>
 </table>
+
+<div ng-controller="ProjectIndexController as vm">
+  <div ng-repeat="project in vm.projects">
+      {{project.title}}
+  </div>
+</div>
