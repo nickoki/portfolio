@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :subtitle
       t.string :category
       t.text :description
+      t.string :cover_image_url
 
       t.timestamps
     end
