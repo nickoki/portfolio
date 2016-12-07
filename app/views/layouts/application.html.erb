@@ -1,15 +1,85 @@
 <!DOCTYPE html>
-<html ng-app="portfolio">
+<html>
   <head>
     <title>Nicholas Oki &ndash; Web Development &amp; Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.6/interact.min.js"></script>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="hg">
+    <div class="hg-body">
+      <aside class="hg-aside">
+        <div class="title">
+          <h1>Nicholas Oki</h1>
+          <h5>Full-Stack Web Developer</h5>
+        </div>
+        <div class="links">
+          <%= link_to "Portfolio", projects_path %>
+          <%= link_to "About Me", about_path %>
+          <%= link_to "Resume", "https://www.dropbox.com/s/sx59bd7flixbe1r/Nicholas-Oki-Resume.pdf?dl=0", target: "_blank" %>
+        </div>
+        <div class="social">
+          <%= link_to "https://github.com/nickoki", class: "github", target: "_blank" do %>
+            <i class="fa fa-github-square" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to "https://www.linkedin.com/in/nicholas-oki", class: "linkedin", target: "_blank" do %>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to "https://twitter.com/nicholasoki", class: "twitter", target: "_blank" do %>
+            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      </aside>
+      <main class="hg-content">
+        <%= yield %>
+      </main>
+    </div>
+    <!-- <div class="console-container">
+      <div class="console"><span>&#36;&nbsp;</span><input id="console-input" /></div>
+    </div> -->
+
+    <!-- <script>
+    interact('.console')
+      .resizable({
+        preserveAspectRatio: true,
+        edges: { top: true }
+      })
+      .on('resizemove', function (event) {
+        var target = event.target,
+            x = (parseFloat(target.getAttribute('data-x')) || 0),
+            y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+        // update the element's style
+        // target.style.width  = event.rect.width + 'px';
+        // target.style.height = event.rect.height + 'px';
+
+
+
+        // // translate when resizing from top or left edges
+        // x += event.deltaRect.left;
+        y += event.deltaRect.top;
+
+        // target.style.webkitTransform = target.style.transform =
+        //     'translate(' + x + 'px,' + y + 'px)';
+
+        const limitY = 200
+
+        if (y < 0 && y > (-limitY)) {
+          target.children[1].style = ' padding: 0 0 ' + ((y * (-1)) + 80) + 'px;';
+        } else if (y > 0) {
+          y = 0
+        } else if (y < (-limitY)) {
+          y = -limitY
+        }
+
+        // target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+        // target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
+      });
+    </script> -->
   </body>
 </html>

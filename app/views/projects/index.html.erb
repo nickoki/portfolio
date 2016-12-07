@@ -1,31 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to 'Show', project %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<div data-ng-controller="ProjectIndexController as vm">
-  <div data-ng-repeat="project in vm.projects">
-      <h2>{{project.title}}</h2>
-      <h3>{{project.subtitle}}</h3>
-      <small>{{project.category}}</small>
-      <p>{{project.description}}</p>
-      <div data-ng-repeat="link in project.links">
-        <a href="{{link.url}}">{{link.call_to_action}}</a>
+<% @projects.each do |project| %>
+  <div class="projects-container">
+    <div class="project-image">
+      <%= image_tag project.cover_image_url %>
+    </div>
+    <div class="project-info">
+      <h2><%= project.title %></h2>
+      <small><%= project.category %></small>
+      <h3><%= project.subtitle %></h3>
+      <div class="links">
+        <%= link_to project_path(project), class: "show" do %>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>Learn More
+        <% end %>
+        <div class="small-links">
+          <% project.links.each do |link| %>
+            <%= link_to link.url, target: "_blank" do %>
+              <%= link.call_to_action %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
+    </div>
   </div>
-</div>
+<% end %>

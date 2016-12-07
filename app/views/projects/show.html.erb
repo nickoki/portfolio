@@ -1,3 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Back', projects_path %>
+<div class="project-container">
+  <%= link_to projects_path do %>
+    <i class="fa fa-chevron-left" aria-hidden="true"></i> Back
+  <% end %>
+  <div class="project-info">
+    <h1><%= @project.title %></h1>
+    <%= image_tag @project.cover_image_url %>
+    <h3><%= @project.subtitle %></h3>
+    <div class="links">
+      <% @project.links.each do |link| %>
+        <%= link_to link.url, target: "_blank" do %>
+          <%= link.call_to_action %>
+        <% end %>
+      <% end %>
+    </div>
+    <p><%= @project.description %></p>
+  </div>
+</div>

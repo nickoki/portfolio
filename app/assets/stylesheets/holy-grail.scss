@@ -1,0 +1,36 @@
+.hg {
+  display: flex;
+
+  .hg-body {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+    .hg-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hg-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 0 18em;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .hg-body {
+    flex-direction: column !important;
+    flex: 1;
+  }
+  .hg-content {
+    flex: 1;
+  }
+  .hg-aside {
+    flex: 0 0 300px !important;
+  }
+}

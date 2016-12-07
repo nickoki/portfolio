@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: "projects#index"
 
+  get "about", to: "statics#about"
+
   resources :projects, only: [:index, :show]
 
 end

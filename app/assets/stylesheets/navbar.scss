@@ -1,0 +1,65 @@
+// Stylesheet for the aside navbar
+
+aside {
+
+  .title {
+    text-align: center;
+
+    h1 {
+      font-size: 24pt;
+      margin-bottom: 0;
+    }
+
+    h5 {
+      margin-top: 1em;
+      color: #888;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      margin: 0.2em 0;
+      border: 1px solid #eaeaea;
+      border-radius: 3px;
+      padding: 0.4em 1.2em;
+      font-weight: 300;
+      transition: 0.4s;
+
+      &:hover {
+        border: 1px solid #ddd;
+        background: #e4e4e4;
+      }
+    }
+  }
+
+  .social {
+    padding-top: 1em;
+
+    a {
+      font-size: 22pt;
+      color: #888;
+
+    &:not(:last-child) {
+      margin-right: 0.6em;
+    }
+
+    }
+    .github:hover {
+      color: #000;
+    }
+
+    .linkedin:hover {
+      color: #0077b5;
+    }
+
+    .twitter:hover {
+      color: #4099FF;
+    }
+  }
+}

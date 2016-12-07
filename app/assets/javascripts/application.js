@@ -12,31 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular
-//= require angular-rails-templates
 //= require_tree .
-
-angular
-  .module("portfolio", [
-    "ngResource"
-  ])
-  .factory("ProjectFactory", [
-    "$resource",
-    ProjectFactoryFunction
-  ])
-  .controller("ProjectIndexController", [
-    "ProjectFactory",
-    ProjectIndexControllerFunction
-  ])
-
-
-
-function ProjectFactoryFunction($resource) {
-  return $resource('/projects/:id.json')
-}
-
-
-
-function ProjectIndexControllerFunction(ProjectFactory) {
-  this.projects = ProjectFactory.query()
-}
