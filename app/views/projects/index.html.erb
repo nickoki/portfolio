@@ -1,7 +1,9 @@
 <% @projects.each do |project| %>
   <div class="projects-container">
     <div class="project-image">
-      <%= image_tag project.cover_image_url %>
+      <%= link_to project do %>
+        <%= image_tag project.cover_image_url %>
+      <% end %>
     </div>
     <div class="project-info">
       <h2><%= project.title %></h2>
