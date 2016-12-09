@@ -1,6 +1,7 @@
 .about-container,
 .project-container,
 .projects-container {
+  display: -ms-flex;
   display: flex;
   flex-wrap: wrap;
   padding: 2.4em 2em;
