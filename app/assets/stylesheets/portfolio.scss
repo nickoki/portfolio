@@ -124,10 +124,6 @@
       max-width: 380px;
       cursor: pointer;
       transition: all 0.4s ease-in;
-
-      &:hover {
-        filter: drop-shadow(0.8em 1.2em 0.9em hsla(360, 0, 0, 0.4));
-      }
     }
   }
 
@@ -172,6 +168,7 @@
 @media only screen and (max-width: 768px) {
   .projects-container {
     min-height: 490px;
+    background: 0;
 
     .project-image {
       margin-right: 0 !important;
