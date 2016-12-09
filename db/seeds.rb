@@ -63,7 +63,7 @@ recourse = Project.create!(
   title: "Recourse",
   subtitle: "A repository to share helpful resources.",
   category: "Ruby on Rails + Angular",
-  description: "Project 3 at WDI gave Tim Foley, Barrett Cope, and I an opportunity to complete an idea we had from early on in the program: ww had wanted to build a site where our classmates could share guides, libraries, documentation, etc. that helped them learn the web development subject matter. We're thrilled with what we were able to accomplish in just 4 days of work. Given more time, we think Recourse could be a very special tool for communities similar to WDI.",
+  description: "Project 3 at WDI gave Tim Foley, Barrett Cope, and I an opportunity to complete an idea we had from early on in the program: we had wanted to build a site where our classmates could share guides, libraries, documentation, etc. that helped them learn the web development subject matter. We're thrilled with what we were able to accomplish in just 4 days of work. Given more time, we think Recourse could be a very special tool for communities similar to WDI.",
   cover_image_url: "http://res.cloudinary.com/ln4ekgvyc/image/upload/v1479229325/Portfolio/recourse-cover.png"
 )
 

@@ -71,6 +71,7 @@
   }
 
   .project-info {
+    display: -ms-flex;
     display: flex;
     flex-direction: column;
     align-items: center;
