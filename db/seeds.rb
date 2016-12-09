@@ -17,7 +17,7 @@ remixology_react = Project.create!(
   title: "Remixology",
   subtitle: "Graphic visualization of custom drink recipes.",
   category: "React",
-  description: "Inspired by a friend who experiments in drink-building, I realized that the world of mixology offered the perfect avenue to incorporate a touch of visual design with my final project for WDI. React was the perfect tool to keep my code DRY while handling calls to my API and dynamically building components the visual components.",
+  description: "Inspired by a friend who experiments in drink-building, I realized that the world of mixology offered the perfect avenue to incorporate a touch of visual design with my final project for WDI. React was the perfect tool to keep my code DRY while handling calls to my API and dynamically building the visual components.",
   cover_image_url: "http://res.cloudinary.com/ln4ekgvyc/image/upload/v1480974900/Portfolio/remixology-react-cover.png"
 )
 
